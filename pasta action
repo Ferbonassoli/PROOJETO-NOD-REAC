@@ -1,0 +1,64 @@
+sub pasta usuários.action.js
+
+export const changeUser = user => ({
+    type: 'CHANGE USER',
+    payload: user
+})
+
+
+>subpasta> rootReducer.js
+
+import { combineReducers } from "redux";
+import usuariosReducer from "./usuários.reducer";
+
+
+ const root Reducer = combineReducers({
+     usuariosReducer
+     
+ });
+ export default rootReducer:'
+ 
+>sub pasta> usuários.reducer.js
+
+
+const initialState = {
+    usuários: {
+        active: null,
+        list: [
+            'pedro',
+            'carlos',
+            'jorge',
+            'luciano',
+            'alex'
+        ]
+
+    }
+}
+
+const usuariosReducer = ( state = initialState.usuarios, action ) =>{
+    if(action.type === '   CHANGE_USER')
+     return {
+     { ...state,
+        active: action.payload
+     }
+   return state;
+}
+
+export default usuariosReducer;'
+
+
+sub pasta store.js
+import{ createStore} from 'redux'
+import rootReducer from './reducers/rootReducer';
+
+export const store = createStore(rootReducer);
+
+subpasta> store.js
+import{ createStore} from 'redux'
+import rootReducer from './reducers/rootReducer';
+
+export const store = createStore(rootReducer);
+
+
+export const store = createStore(rootReducer);
+
