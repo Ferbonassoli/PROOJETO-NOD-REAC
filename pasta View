@@ -1,0 +1,148 @@
+sub pasta Login.js
+
+
+
+
+
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import { whithstyles} from '@material- ui/core/style'
+import Container from '@mateial-ui/core/Container';
+import Button '@material-ui/core/Button';
+import TexField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import { green} from '@material-ui/core/colors';
+const ColorButton = withStyles(theme =>({
+    root: {
+        color: '#fff',
+        backgroundColor: green[500],
+        '&:hover' : {
+             backgroundColor: green[700}
+        }
+    }
+
+}))(Button)
+export class Login extends Component {
+    render() {
+         return (
+              <Container component="main" maxWidth="xs">
+                  <div className="mt-3 mt-md-5">
+                    <div className="text-center">
+       <Typography className="mt-3" "font-weight-normal" component="h1" variant="h6"Cadastro LABS React e Laravel>  </Typography>
+                      </div>
+                        
+                        <div className="mt-4">
+                             <TexField
+                             variant="outlined"
+                              margin="normal"
+                              required
+                              fullWidth
+                              id="email"
+                              label="Email"
+                              name="username"
+                              type="email"
+                              />
+                              <TexFielfd
+                              variant="outlined"
+                              margin="normal"
+                              required
+                              fullWidth
+                              id="password"
+                              label="senha"
+                              name="password"
+                              type="password"
+                              />
+                              <Button
+                              type="button"
+                              variant="contained"
+                              fullWidth
+                            color="primary"
+                            size="large"
+                            class="mb-3 mb-md-4 mt-4"
+                            >
+                                Entrar
+                                </Button>
+                                <Link href="/register">
+                                    <ColorButton
+                                      type="button"
+                                       fullWidth
+                                       variant="contained"
+                                       className="mt-md-4"
+                                    >
+                                        Cadastrar
+                                    </ColorButton>
+                                    ></div>
+                                </link>
+                                </div><
+                   </TexField> 
+                  </div>                 
+              </Container>
+             <div>
+                 
+
+
+             </div>
+         )
+    }
+
+}
+    const mapStateToProps = dispath => ({
+     
+    })
+
+       export default connect(mapStateToProps, maDispathToProps)(Login)
+       
+>subpasta routes.js
+import React, { Suspense, lazy} from 'react';
+import  { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const Login = lazy(()  => import('./view/login/Login'));
+
+const Routes = ()=> (
+     <Router>
+        <Suspense fallback={<div></div>}>
+            <Switch>
+                 <Route path="/login"  component={Login} />
+                 <Route path="/" component={Login} />
+            </Switch>    
+     </Suspense>
+     </Router>
+)
+
+export default Routes
+
+sub pasta App.js
+import React from "react";
+import { Provider } from 'react- redux';
+import{ store} from './store/store';
+import { createMuitheme, ThemeProvider } from '@material-ui'/core/styles';
+
+
+import Routes from "./routes";
+
+import './css/dashboard.css';
+
+ const theme = createMuiTheme({
+      palette: {
+           primary: {
+                main: '#2196f3'
+           }
+      }
+ })
+
+ function App() {
+      return (
+          <Provider store={store}>
+          <ThemeProvider theme={theme}>
+                           
+            </ThemeProvider>
+            </Provider>
+      );
+ }
+
+  export default Routes;
+
+
+
+
