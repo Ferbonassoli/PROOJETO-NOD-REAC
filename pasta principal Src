@@ -1,0 +1,67 @@
+sub pasta > components >
+>sideBar.js:
+
+
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { changeUser} from '../store/actions/usuarios.action'
+
+export class SideBar extends Component {
+    render() {
+        return (
+            <ul>
+                 {this.props.usuarios.listmap)user, index => (
+        <li key={index}>{user} <button> onClick= {() => this.chamgeUser(user)>selecionar</button></li>
+                ))}
+                
+            </ul>
+        )
+    }
+}
+
+const mapStateToProps = (state) => ({
+        changeUser: (user) => dispatch(user())
+})
+
+const mapDispatchToProps = {
+    
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(usuários)
+
+
+Sub pasta usuários.js:
+
+
+
+import React, { Component} from'react'
+import { connect } from 'react-redux'
+import Button from 'react-redux'
+import { render } from 'react-dom'
+
+export class Usuarios extends Component{
+ render() {
+       return (
+           <div>
+               ]<h2> Usuario: {this.props.usuarios.active}</h2>
+           </div>
+
+
+
+           const mapStateToProps = (state) => ({
+                usuarios: state.usuariosReducer
+
+           })
+           
+       )
+ }
+
+}
+export default connect(mapStateToProps, mapDispathToProps)(Usuarios)
+
+
+
+
+
+
+
